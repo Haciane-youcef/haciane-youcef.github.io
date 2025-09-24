@@ -566,7 +566,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Sélectionner les éléments à animer
                 const elements = entry.target.querySelectorAll('h2, h3, p, .social-icons, .btn-group');
                 elements.forEach((el, index) => {
-                    el.style.animationDelay = `${index * 0.5}s`; 
+                    el.style.animationDelay = `${index * 0.4}s`; 
                     el.style.animationPlayState = 'running'; 
                 });
                 homeContentObserver.unobserve(entry.target);
@@ -628,3 +628,4 @@ document.addEventListener('DOMContentLoaded', function () {
     createParticles();
     updateActiveProject();
 });
+

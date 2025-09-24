@@ -551,6 +551,69 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+/** partie animations */
+// partie homepage
+
+    const observerOptionshome = {
+        threshold: 0.1, // 10% de l'élément visible
+        rootMargin: '0px 0px -100px 0px' // Marge pour déclencher un peu avant
+    };
+
+    const homeContentObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Sélectionner les éléments à animer
+                const elements = entry.target.querySelectorAll('h2, h3, p, .social-icons, .btn-group');
+                elements.forEach((el, index) => {
+                    el.style.animationDelay = `${index * 0.5}s`; 
+                    el.style.animationPlayState = 'running'; 
+                });
+                homeContentObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptionshome);
+
+    // Observer la div .home-content
+    const homeContent = document.querySelector('.home-content');
+    if (homeContent) {
+        
+        homeContent.querySelectorAll('h2, h3, p, .social-icons, .btn-group').forEach(el => {
+            el.style.animationPlayState = 'paused';
+        });
+        homeContentObserver.observe(homeContent);
+    }
+
+
+// Animation des paragraphes dans la section "About Me" avec Intersection Observer
+const observerOptions = {
+    threshold: 0.1, 
+    rootMargin: '0px 0px -100px 0px' 
+};
+
+const textObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            
+            entry.target.querySelectorAll('p').forEach((p, index) => {
+                p.style.animationDelay = `${index * 0.4}s`; 
+                p.style.animationPlayState = 'running';
+            });
+            textObserver.unobserve(entry.target); 
+        }
+    });
+}, observerOptions);
+
+// Observer la div .text-content
+const textContent = document.querySelector('#about-me-section .text-content');
+if (textContent) {
+    // Initialement, mettre l'animation en pause
+    textContent.querySelectorAll('p').forEach(p => {
+        p.style.animationPlayState = 'paused';
+    });
+    textObserver.observe(textContent);
+}
+
 /**
  * Initialize All Features on DOM Load
  */

@@ -346,6 +346,72 @@ section{
     }
 }
 
+/* Animation keyframes pour le slide-in de droite à gauche */
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); 
+    }
+}
+
+
+.home-content h2,
+.home-content h3,
+.home-content p {
+    opacity: 0; 
+    transform: translateX(100px); 
+    transition: opacity 0.8s ease, transform 0.8s ease; 
+    animation: slideInFromRight 1s ease forwards; 
+}
+
+
+.home-content h2 {
+    animation-delay: 0s;
+}
+
+.home-content h3 {
+    animation-delay: 0.2s;
+}
+
+.home-content p {
+    animation-delay: 0.4s;
+}
+
+.home-content .social-icons {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideInFromRight 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.home-content .btn-group {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideInFromRight 1s ease forwards;
+    animation-delay: 0.8s;
+}
+
+
+.home-content .text-animation span:before,
+.home-content .text-animation span:after {
+    animation-play-state: running;
+}
+
+
+@media (max-width: 768px) {
+    .home-content h2,
+    .home-content h3,
+    .home-content p,
+    .home-content .social-icons,
+    .home-content .btn-group {
+        transform: translateX(50px); 
+    }
+}
+
 
 /**link about me **/
 .more-about-link-alt {
@@ -529,6 +595,58 @@ section{
                 letter-spacing: 0.025em;
                 color: rgba(0, 0, 0, 0.8);
             }
+
+            /**/
+            /* Animation keyframes pour le slide-in from left */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px); /* Décalage initial à gauche */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Position finale */
+    }
+}
+
+/* Appliquer l'animation aux paragraphes avec stagger (délai progressif) */
+#about-me-section .text-content p {
+    opacity: 0; /* Initialement invisible */
+    transform: translateX(-100px); /* Initialement décalé à gauche */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Pour une transition fluide si besoin */
+    animation: slideInFromLeft 1s ease forwards; /* Animation de 1s */
+}
+
+/* Délais stagger pour chaque paragraphe (animation séquentielle) */
+#about-me-section .text-content p:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#about-me-section .text-content p:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+#about-me-section .text-content p:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+#about-me-section .text-content p:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+#about-me-section .text-content p:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+
+
+/* Pas d'animation sur les social-links pour éviter les bugs de clic */
+#about-me-section .text-content .social-links {
+    opacity: 1; /* Toujours visible */
+    transform: none; /* Pas de déplacement */
+}
+
+/**/
 
             #about-me-section .text-content p {
                 font-weight: 400!important;

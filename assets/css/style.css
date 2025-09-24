@@ -3481,7 +3481,12 @@ section{
         left: 15px;
         right: 15px;
     }
+    .social-button svg {
+        height: 20px;
+        width: 20px;
+    }
 
 
     
 }
+

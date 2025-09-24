@@ -3486,7 +3486,16 @@ section{
         width: 20px;
     }
 
+    .call-to-action-section-wrapper .rotating-badge {
+        top: 310px; 
+    }
+   
+    .call-to-action-section-wrapper .description {
+        margin-top: 100px!important;
+    }  
+
 
     
 }
+
 

@@ -15,23 +15,19 @@
     
     /***/
 
-     --bg-primary: #ffffff;
-     --glass-bg: rgba(255, 255, 255, 0.1);
-     --glass-border: rgba(255, 255, 255, 0.2);
-     --text-primary: #0a0a0a;
-     --text-secondary: #4a5568;
-     --text-muted: #718096;
-            --accent-primary: #6366f1;
-            --accent-secondary: #8b5cf6;
-            --accent-tertiary: #06b6d4;
-            --accent-quaternary: #f59e0b;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.1);
-            --shadow-card: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
-            --shadow-floating: 0 35px 60px -12px rgba(0, 0, 0, 0.1);
+    --bg-primary: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text-primary: #0a0a0a;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --accent-primary: #6366f1;
+    --accent-secondary: #8b5cf6;
+    --accent-tertiary: #06b6d4;
+    --accent-quaternary: #f59e0b;
+    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.1);
+    --shadow-card: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+    --shadow-floating: 0 35px 60px -12px rgba(0, 0, 0, 0.1);
 }
 
 html{
@@ -52,18 +48,20 @@ body{
 
 /* ******************Header Section********************* */
 
-.header{
+.header {
     position: fixed;
     top: 0;
     margin-top: 1px;
-    left: 50px;
-    width: 90%;
+    width: 100%;
+    max-width: 1350px;
+    left: calc((100% - 1350px) / 2) !important;
     padding: 10px 10% 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 5;
 }
+
 
 #header-navbar.header-navbar_scrole {
     
@@ -3294,6 +3292,15 @@ section{
         grid-template-columns: repeat(2,1fr);
         margin: 0 5rem;
     }
+
+    .header {
+        max-width: 90%;
+        left: 50px !important;
+        right: 50px !important;
+        
+       
+    }
+
 }
 @media (max-width:991px) {
     header{
@@ -3333,10 +3340,21 @@ section{
     #menu-icon{
         display: block;
     }
+
+    .header{
+        
+        max-width: 90%;
+        left: 30px !important;
+        right: 30px !important;
+
+
+    }
+
     .navbar{
         position: absolute;
         top: 100%;
         right: 0;
+        padding-left: 15px;
         width: 50%;
         
         background: rgba(0, 0, 0, 0.8);
@@ -3364,8 +3382,8 @@ section{
     }
     .home{
         flex-direction: column-reverse;
-        margin: 3rem 3rem;
-        gap: 5rem;
+        margin: 1.5rem 2rem;
+        gap: 3.5rem;
     }
     .home-content h3{
         font-size: 2.5rem;
@@ -3388,7 +3406,14 @@ section{
         grid-template-columns: repeat(1,1fr);
     }
 }
-@media (max-width:426px) {
+@media (max-width:450px) {
+
+    .header {
+        max-width: 90%;
+        left: 15px !important;
+        right: 15px !important;
+    }
+
     .home-content h3{
         font-size: 2.5rem;
     }

@@ -756,144 +756,238 @@
     <section id="projects" class="projects">
         <div class="particles" id="particles"></div>
         <div class="projects-section-container">
-                <div class="section-title">
-                    <p class="section-subtitle">
-                        Mes Projets
-                    </p>
-                    <h2 class="section-main-title font-instrument-serif">
-                        <span>La magie de transformer la vision </span>
-                        <span class="gradient-text">en réalisations concrètes</span>
-                    </h2>
-                </div>
+            <div class="section-title">
+                <p class="section-subtitle">
+                    Mes Projets
+                </p>
+                <h2 class="section-main-title font-instrument-serif">
+                    <span>La magie de transformer la vision </span>
+                    <span class="gradient-text">en réalisations concrètes</span>
+                </h2>
+            </div>
         </div>
         <div class="projects-wrapper">
             <!-- Liste des projets (gauche) -->
             <div class="projects-list">
-                <div class="project-card active" data-project="0">
-                    <div class="project-card-inner">
-                        <div class="project-gradient-bg project-1"></div>
-                        <div class="project-top-line"></div>
-                        
-                        <div class="project-header">
-                            <div style="display: flex; justify-content: space-between; align-items: center; color: #f9a8d4;">
-                                <h3 class="project-title-header">Une plateforme e-commerce moderne avec panier intelligent et gestion des stocks en temps réel.</h3>
-                                <svg class="project-arrow" viewBox="0 0 24 24" fill="none">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                                </svg>
-                            </div>
+                <!-- Projet 1 -->
+                <div class="project-item">
+                    <!-- Détails du projet 1 - Visible uniquement sur mobile -->
+                    <div class="project-detail-content project-detail-mobile" data-detail="0">
+                        <div class="project-indicator">
+                            <div class="project-indicator-bar"></div>
                         </div>
-                        
-                        <div class="project-image-container">
-                            <div class="project-mockup">
-                                <img src="assets/img/TBI.jpg" alt="Photo du projet Business Intelligence">
+                        <h3 class="project-detail-title">Projet Business Intelligence end-to-end</h3>
+                        <p class="project-detail-description">
+                            Ce projet consistait à concevoir et implémenter un Data Warehouse complet pour analyser les performances commerciales de l'entreprise à partir de la base de données Northwind.<br> 
+                            Toutes les étapes du processus BI ont été couvertes : collecte et intégration des données depuis SQL Server et MS Access, transformation via Talend Open Studio et chargement dans le Data Warehouse. <br>
+                            Des dashboards interactifs ont été développés avec Tableau, incluant graphiques dynamiques, filtres et indicateurs clés (KPIs) pour suivre les ventes, identifier les produits performants, les clients stratégiques et les tendances saisonnières. <br>
+                            Le projet a également inclus l'optimisation des performances des requêtes et dashboards, la gestion de la qualité des données et l'analyse des insights pour fournir des recommandations stratégiques aux managers.<br>
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">SQL Server</span>
+                            <span class="tech-badge">MS Access</span>
+                            <span class="tech-badge">Talend Open Studio</span>
+                            <span class="tech-badge">Tableau</span>
+                            <span class="tech-badge">ETL</span>
+                            <span class="tech-badge">Data Modeling</span>
+                        </div>
+                    </div>
+                    <div class="project-card active" data-project="0">
+                        <div class="project-card-inner">
+                            <div class="project-gradient-bg project-1"></div>
+                            <div class="project-top-line"></div>
+                            <div class="project-header">
+                                <div style="display: flex; justify-content: space-between; align-items: center; color: #f9a8d4;">
+                                    <h3 class="project-title-header">Une plateforme e-commerce moderne avec panier intelligent et gestion des stocks en temps réel.</h3>
+                                    <svg class="project-arrow" viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="project-image-container">
+                                <div class="project-mockup">
+                                    <img src="assets/img/TBI.jpg" alt="Photo du projet Business Intelligence">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card" data-project="1">
-                    <div class="project-card-inner">
-                        <div class="project-gradient-bg project-2"></div>
-                        <div class="project-top-line"></div>
-                        
-                        <div class="project-header">
-                            <div style="display: flex; justify-content: space-between; align-items: center; color: #93c5fd;">
-                                <h3 class="project-title-header">Application mobile de réseau social avec chat en temps réel et notifications intelligentes.</h3>
-                                <svg class="project-arrow" viewBox="0 0 24 24" fill="none">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                                </svg>
-                            </div>
+                <!-- Projet 2 -->
+                <div class="project-item">
+                    <div class="project-detail-content project-detail-mobile" data-detail="1">
+                        <div class="project-indicator">
+                            <div class="project-indicator-bar"></div>
                         </div>
-                        
-                        <div class="project-image-container">
-                            <div class="project-mockup Rag">
-                                <img src="assets/img/Rag.png" alt="Rag-projet">
+                        <h3 class="project-detail-title">RAG – Chatbot PDF & Sites Web</h3>
+                        <p class="project-detail-description">
+                            Le projet RAG (Retrieval Augmented Generation) vise à créer un assistant intelligent capable de répondre à des questions en utilisant des documents PDF et des contenus web. <br>
+                            Contrairement aux LLMs classiques dont les connaissances sont figées dans le temps, le RAG intègre des informations externes actualisées, permettant de fournir des réponses précises et contextuelles. <br>
+                            Les documents sont segmentés en chunks, transformés en vecteurs (embeddings) et stockés dans une base ChromaDB. Lorsqu'une requête est posée, le système identifie les informations les plus pertinentes, les enrichit avec du contexte et génère une réponse via Google Gemini LLM. <br>
+                            Cette approche améliore la qualité des réponses, réduit les erreurs et permet de personnaliser les informations selon les besoins spécifiques de l'entreprise. <br>
+                            Le projet inclut également le développement d'une interface interactive avec Streamlit, offrant une expérience utilisateur simple et intuitive pour l'accès aux informations.<br>
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">LangChain</span>
+                            <span class="tech-badge">Gemini LLM</span>
+                            <span class="tech-badge">Word2Vector</span>
+                            <span class="tech-badge">ChromaDB</span>
+                            <span class="tech-badge">Streamlit</span>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="1">
+                        <div class="project-card-inner">
+                            <div class="project-gradient-bg project-2"></div>
+                            <div class="project-top-line"></div>
+                            <div class="project-header">
+                                <div style="display: flex; justify-content: space-between; align-items: center; color: #93c5fd;">
+                                    <h3 class="project-title-header">Application mobile de réseau social avec chat en temps réel et notifications intelligentes.</h3>
+                                    <svg class="project-arrow" viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="project-image-container">
+                                <div class="project-mockup Rag">
+                                    <img src="assets/img/Rag.png" alt="Rag-projet">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card" data-project="2">
-                    <div class="project-card-inner">
-                        <div class="project-gradient-bg project-3"></div>
-                        <div class="project-top-line"></div>
-                        
-                        <div class="project-header">
-                            <div style="display: flex; justify-content: space-between; align-items: center; color: #7dd3fc;">
-                                <h3 class="project-title-header">Interface de visualisation de données avec graphiques interactifs et rapports en temps réel.</h3>
-                                <svg class="project-arrow" viewBox="0 0 24 24" fill="none">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                                </svg>
-                            </div>
+                <!-- Projet 3 -->
+                <div class="project-item">
+                    <div class="project-detail-content project-detail-mobile" data-detail="2">
+                        <div class="project-indicator">
+                            <div class="project-indicator-bar"></div>
                         </div>
-                        
-                        <div class="project-image-container">
-                            <div class="project-mockup">
-                                <img src="assets/img/cluster-mongodb.jpg" alt="cluster-mongodb">
+                        <h3 class="project-detail-title">Cluster MongoDB, Replica Set et Sharding</h3>
+                        <p class="project-detail-description">
+                            Ce projet consistait à déployer un cluster MongoDB distribué et résilient, intégrant à la fois un Replica Set pour garantir la haute disponibilité et le sharding pour répartir les données sur plusieurs nœuds et assurer la scalabilité horizontale. <br>
+                            Docker et PowerShell ont été utilisés pour automatiser le déploiement et l'orchestration du cluster, tandis que Python a permis d'initialiser les données et de vérifier la distribution des shards afin d'assurer l'intégrité et la performance de l'ensemble. <br>
+                            Ce projet a permis de mettre en pratique des concepts avancés de bases de données distribuées, tout en garantissant une infrastructure fiable, évolutive et prête pour des applications critiques en production.<br>
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">PowerShell</span>
+                            <span class="tech-badge">Python</span>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="2">
+                        <div class="project-card-inner">
+                            <div class="project-gradient-bg project-3"></div>
+                            <div class="project-top-line"></div>
+                            <div class="project-header">
+                                <div style="display: flex; justify-content: space-between; align-items: center; color: #7dd3fc;">
+                                    <h3 class="project-title-header">Interface de visualisation de données avec graphiques interactifs et rapports en temps réel.</h3>
+                                    <svg class="project-arrow" viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="project-image-container">
+                                <div class="project-mockup">
+                                    <img src="assets/img/cluster-mongodb.jpg" alt="cluster-mongodb">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card" data-project="3">
-                    <div class="project-card-inner">
-                        <div class="project-gradient-bg project-4"></div>
-                        <div class="project-top-line"></div>
-                        
-                        <div class="project-header">
-                            <div style="display: flex; justify-content: space-between; align-items: center; color: #d8b4fe;">
-                                <h3 class="project-title-header">Jeu interactif multijoueur avec matchmaking automatique et chat vocal intégré.</h3>
-                                <svg class="project-arrow" viewBox="0 0 24 24" fill="none">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                                </svg>
-                            </div>
+                <!-- Projet 4 -->
+                <div class="project-item">
+                    <div class="project-detail-content project-detail-mobile" data-detail="3">
+                        <div class="project-indicator">
+                            <div class="project-indicator-bar"></div>
                         </div>
-                        
-                        <div class="project-image-container">
-                            <div class="project-mockup Power-bi-accidents">
-                                <img src="assets/img/power-bi-accidents.jpg" alt="Power-bi-accidents">
+                        <h3 class="project-detail-title">Analyse des accidents de la route au Royaume-Uni</h3>
+                        <p class="project-detail-description">
+                            Ce projet avait pour objectif d'analyser les données sur les accidents de la route au Royaume-Uni afin d'identifier les tendances, les zones à risque et les facteurs contribuant aux accidents. <br>
+                            Les données brutes ont été collectées, nettoyées et transformées avec Talend Open Studio pour garantir leur qualité et leur cohérence. <br>
+                            Ensuite, des tableaux de bord interactifs ont été développés avec Power BI, permettant de visualiser les KPIs clés tels que le nombre d'accidents, la gravité, le type de véhicules impliqués, les conditions météorologiques et la répartition géographique. <br>
+                            Ces visualisations ont permis de fournir des insights précis pour la prévention des accidents et la prise de décision stratégique.<br>
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">Talend Open Studio</span>
+                            <span class="tech-badge">Power BI</span>
+                            <span class="tech-badge">ETL</span>
+                            <span class="tech-badge">Data Analysis</span>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="3">
+                        <div class="project-card-inner">
+                            <div class="project-gradient-bg project-4"></div>
+                            <div class="project-top-line"></div>
+                            <div class="project-header">
+                                <div style="display: flex; justify-content: space-between; align-items: center; color: #d8b4fe;">
+                                    <h3 class="project-title-header">Jeu interactif multijoueur avec matchmaking automatique et chat vocal intégré.</h3>
+                                    <svg class="project-arrow" viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="project-image-container">
+                                <div class="project-mockup Power-bi-accidents">
+                                    <img src="assets/img/power-bi-accidents.jpg" alt="Power-bi-accidents">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card" data-project="4">
-                    <div class="project-card-inner">
-                        <div class="project-gradient-bg project-5"></div>
-                        <div class="project-top-line"></div>
-                        
-                        <div class="project-header">
-                            <div style="display: flex; justify-content: space-between; align-items: center; color: #f9a8d4;">
-                                <h3 class="project-title-header">Plateforme immobilière avec recherche avancée et visite virtuelle 360°.</h3>
-                                <svg class="project-arrow" viewBox="0 0 24 24" fill="none">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                                </svg>
-                            </div>
+                <!-- Projet 5 -->
+                <div class="project-item">
+                    <div class="project-detail-content project-detail-mobile" data-detail="4">
+                        <div class="project-indicator">
+                            <div class="project-indicator-bar"></div>
                         </div>
-                        
-                        <div class="project-image-container">
-                            <div class="project-mockup Data-lake-hadoop">
-                                <img src="assets/img/Data-lake-hadoop.png" alt="Data-lake-hadoop">
+                        <h3 class="project-detail-title">Conception d'un Data Lake avec Hadoop et Hive</h3>
+                        <p class="project-detail-description">
+                            Ce projet consistait à concevoir et déployer un Data Lake distribué capable de stocker, organiser et analyser de grandes quantités de données hétérogènes. <br>
+                            Hadoop et HDFS ont été utilisés pour assurer un stockage fiable et distribué des données brutes, tandis que Hive Metastore et les tables Hive ont permis de cataloguer et interroger facilement les données structurées et semi-structurées. <br>
+                            Docker a été employé pour déployer et orchestrer l'ensemble de l'infrastructure, garantissant une mise en place rapide et reproductible. <br>
+                            Ce projet a permis de mettre en place une architecture de Data Lake robuste, évolutive et prête à être utilisée pour l'analyse et la transformation des données dans un environnement Big Data. <br>
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">Hadoop</span>
+                            <span class="tech-badge">HDFS</span>
+                            <span class="tech-badge">Hive Metastore</span>
+                            <span class="tech-badge">Hive Tables</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Big Data</span>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="4">
+                        <div class="project-card-inner">
+                            <div class="project-gradient-bg project-5"></div>
+                            <div class="project-top-line"></div>
+                            <div class="project-header">
+                                <div style="display: flex; justify-content: space-between; align-items: center; color: #f9a8d4;">
+                                    <h3 class="project-title-header">Plateforme immobilière avec recherche avancée et visite virtuelle 360°.</h3>
+                                    <svg class="project-arrow" viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="project-image-container">
+                                <div class="project-mockup Data-lake-hadoop">
+                                    <img src="assets/img/Data-lake-hadoop.png" alt="Data-lake-hadoop">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Sidebar avec détails (droite) -->
+            <!-- Sidebar avec détails (droite) - Visible uniquement sur desktop -->
             <div class="project-details-sidebar">
-                
-
                 <div class="project-detail-content active" data-detail="0">
                     <div class="project-indicator">
                         <div class="project-indicator-bar"></div>
                     </div>
                     <h3 class="project-detail-title">Projet Business Intelligence end-to-end</h3>
                     <p class="project-detail-description">
-                        Ce projet consistait à concevoir et implémenter un Data Warehouse complet pour analyser les performances commerciales de l’entreprise à partir de la base de données Northwind.<br> 
+                        Ce projet consistait à concevoir et implémenter un Data Warehouse complet pour analyser les performances commerciales de l'entreprise à partir de la base de données Northwind.<br> 
                         Toutes les étapes du processus BI ont été couvertes : collecte et intégration des données depuis SQL Server et MS Access, transformation via Talend Open Studio et chargement dans le Data Warehouse. <br>
                         Des dashboards interactifs ont été développés avec Tableau, incluant graphiques dynamiques, filtres et indicateurs clés (KPIs) pour suivre les ventes, identifier les produits performants, les clients stratégiques et les tendances saisonnières. <br>
-                        Le projet a également inclus l’optimisation des performances des requêtes et dashboards, la gestion de la qualité des données et l’analyse des insights pour fournir des recommandations stratégiques aux managers.<br>
+                        Le projet a également inclus l'optimisation des performances des requêtes et dashboards, la gestion de la qualité des données et l'analyse des insights pour fournir des recommandations stratégiques aux managers.<br>
                     </p>
                     <div class="project-tech-stack">
                         <span class="tech-badge">SQL Server</span>
@@ -904,82 +998,71 @@
                         <span class="tech-badge">Data Modeling</span>
                     </div>
                 </div>
-
-
-
                 <div class="project-detail-content" data-detail="1">
-                <div class="project-indicator">
-                    <div class="project-indicator-bar"></div>
+                    <div class="project-indicator">
+                        <div class="project-indicator-bar"></div>
+                    </div>
+                    <h3 class="project-detail-title">RAG – Chatbot PDF & Sites Web</h3>
+                    <p class="project-detail-description">
+                        Le projet RAG (Retrieval Augmented Generation) vise à créer un assistant intelligent capable de répondre à des questions en utilisant des documents PDF et des contenus web. <br>
+                        Contrairement aux LLMs classiques dont les connaissances sont figées dans le temps, le RAG intègre des informations externes actualisées, permettant de fournir des réponses précises et contextuelles. <br>
+                        Les documents sont segmentés en chunks, transformés en vecteurs (embeddings) et stockés dans une base ChromaDB. Lorsqu'une requête est posée, le système identifie les informations les plus pertinentes, les enrichit avec du contexte et génère une réponse via Google Gemini LLM. <br>
+                        Cette approche améliore la qualité des réponses, réduit les erreurs et permet de personnaliser les informations selon les besoins spécifiques de l'entreprise. <br>
+                        Le projet inclut également le développement d'une interface interactive avec Streamlit, offrant une expérience utilisateur simple et intuitive pour l'accès aux informations.<br>
+                    </p>
+                    <div class="project-tech-stack">
+                        <span class="tech-badge">LangChain</span>
+                        <span class="tech-badge">Gemini LLM</span>
+                        <span class="tech-badge">Word2Vector</span>
+                        <span class="tech-badge">ChromaDB</span>
+                        <span class="tech-badge">Streamlit</span>
+                    </div>
                 </div>
-                <h3 class="project-detail-title">RAG – Chatbot PDF & Sites Web</h3>
-                <p class="project-detail-description">
-                    Le projet RAG (Retrieval Augmented Generation) vise à créer un assistant intelligent capable de répondre à des questions en utilisant des documents PDF et des contenus web. <br>
-                    Contrairement aux LLMs classiques dont les connaissances sont figées dans le temps, le RAG intègre des informations externes actualisées, permettant de fournir des réponses précises et contextuelles. <br>
-                    Les documents sont segmentés en chunks, transformés en vecteurs (embeddings) et stockés dans une base ChromaDB. Lorsqu’une requête est posée, le système identifie les informations les plus pertinentes, les enrichit avec du contexte et génère une réponse via Google Gemini LLM. <br>
-                    Cette approche améliore la qualité des réponses, réduit les erreurs et permet de personnaliser les informations selon les besoins spécifiques de l’entreprise. <br>
-                    Le projet inclut également le développement d’une interface interactive avec Streamlit, offrant une expérience utilisateur simple et intuitive pour l’accès aux informations.<br>
-                </p>
-                <div class="project-tech-stack">
-                    <span class="tech-badge">LangChain</span>
-                    <span class="tech-badge">Gemini LLM</span>
-                    <span class="tech-badge">Word2Vector</span>
-                    <span class="tech-badge">ChromaDB</span>
-                    <span class="tech-badge">Streamlit</span>
+                <div class="project-detail-content" data-detail="2">
+                    <div class="project-indicator">
+                        <div class="project-indicator-bar"></div>
+                    </div>
+                    <h3 class="project-detail-title">Cluster MongoDB, Replica Set et Sharding</h3>
+                    <p class="project-detail-description">
+                        Ce projet consistait à déployer un cluster MongoDB distribué et résilient, intégrant à la fois un Replica Set pour garantir la haute disponibilité et le sharding pour répartir les données sur plusieurs nœuds et assurer la scalabilité horizontale. <br>
+                        Docker et PowerShell ont été utilisés pour automatiser le déploiement et l'orchestration du cluster, tandis que Python a permis d'initialiser les données et de vérifier la distribution des shards afin d'assurer l'intégrité et la performance de l'ensemble. <br>
+                        Ce projet a permis de mettre en pratique des concepts avancés de bases de données distribuées, tout en garantissant une infrastructure fiable, évolutive et prête pour des applications critiques en production.<br>
+                    </p>
+                    <div class="project-tech-stack">
+                        <span class="tech-badge">MongoDB</span>
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">PowerShell</span>
+                        <span class="tech-badge">Python</span>
+                    </div>
                 </div>
-            </div>
-
-
-
-            <div class="project-detail-content" data-detail="2">
-                <div class="project-indicator">
-                    <div class="project-indicator-bar"></div>
+                <div class="project-detail-content" data-detail="3">
+                    <div class="project-indicator">
+                        <div class="project-indicator-bar"></div>
+                    </div>
+                    <h3 class="project-detail-title">Analyse des accidents de la route au Royaume-Uni</h3>
+                    <p class="project-detail-description">
+                        Ce projet avait pour objectif d'analyser les données sur les accidents de la route au Royaume-Uni afin d'identifier les tendances, les zones à risque et les facteurs contribuant aux accidents. <br>
+                        Les données brutes ont été collectées, nettoyées et transformées avec Talend Open Studio pour garantir leur qualité et leur cohérence. <br>
+                        Ensuite, des tableaux de bord interactifs ont été développés avec Power BI, permettant de visualiser les KPIs clés tels que le nombre d'accidents, la gravité, le type de véhicules impliqués, les conditions météorologiques et la répartition géographique. <br>
+                        Ces visualisations ont permis de fournir des insights précis pour la prévention des accidents et la prise de décision stratégique.<br>
+                    </p>
+                    <div class="project-tech-stack">
+                        <span class="tech-badge">Talend Open Studio</span>
+                        <span class="tech-badge">Power BI</span>
+                        <span class="tech-badge">ETL</span>
+                        <span class="tech-badge">Data Analysis</span>
+                    </div>
                 </div>
-                <h3 class="project-detail-title">Cluster MongoDB, Replica Set et Sharding</h3>
-                <p class="project-detail-description">
-                    Ce projet consistait à déployer un cluster MongoDB distribué et résilient, intégrant à la fois un Replica Set pour garantir la haute disponibilité et le sharding pour répartir les données sur plusieurs nœuds et assurer la scalabilité horizontale. <br>
-                    Docker et PowerShell ont été utilisés pour automatiser le déploiement et l’orchestration du cluster, tandis que Python a permis d’initialiser les données et de vérifier la distribution des shards afin d’assurer l’intégrité et la performance de l’ensemble. <br>
-                    Ce projet a permis de mettre en pratique des concepts avancés de bases de données distribuées, tout en garantissant une infrastructure fiable, évolutive et prête pour des applications critiques en production.<br>
-                </p>
-                <div class="project-tech-stack">
-                    <span class="tech-badge">MongoDB</span>
-                    <span class="tech-badge">Docker</span>
-                    <span class="tech-badge">PowerShell</span>
-                    <span class="tech-badge">Python</span>
-                </div>
-            </div>
-
-            <div class="project-detail-content" data-detail="3">
-                <div class="project-indicator">
-                    <div class="project-indicator-bar"></div>
-                </div>
-                <h3 class="project-detail-title">Analyse des accidents de la route au Royaume-Uni</h3>
-                <p class="project-detail-description">
-                    Ce projet avait pour objectif d’analyser les données sur les accidents de la route au Royaume-Uni afin d’identifier les tendances, les zones à risque et les facteurs contribuant aux accidents. <br>
-                    Les données brutes ont été collectées, nettoyées et transformées avec Talend Open Studio pour garantir leur qualité et leur cohérence. <br>
-                    Ensuite, des tableaux de bord interactifs ont été développés avec Power BI, permettant de visualiser les KPIs clés tels que le nombre d’accidents, la gravité, le type de véhicules impliqués, les conditions météorologiques et la répartition géographique. <br>
-                    Ces visualisations ont permis de fournir des insights précis pour la prévention des accidents et la prise de décision stratégique.<br>
-                </p>
-                <div class="project-tech-stack">
-                    <span class="tech-badge">Talend Open Studio</span>
-                    <span class="tech-badge">Power BI</span>
-                    <span class="tech-badge">ETL</span>
-                    <span class="tech-badge">Data Analysis</span>
-                </div>
-            </div>
-
-
-
-
                 <div class="project-detail-content" data-detail="4">
                     <div class="project-indicator">
                         <div class="project-indicator-bar"></div>
                     </div>
-                    <h3 class="project-detail-title">Conception d’un Data Lake avec Hadoop et Hive</h3>
+                    <h3 class="project-detail-title">Conception d'un Data Lake avec Hadoop et Hive</h3>
                     <p class="project-detail-description">
                         Ce projet consistait à concevoir et déployer un Data Lake distribué capable de stocker, organiser et analyser de grandes quantités de données hétérogènes. <br>
                         Hadoop et HDFS ont été utilisés pour assurer un stockage fiable et distribué des données brutes, tandis que Hive Metastore et les tables Hive ont permis de cataloguer et interroger facilement les données structurées et semi-structurées. <br>
-                        Docker a été employé pour déployer et orchestrer l’ensemble de l’infrastructure, garantissant une mise en place rapide et reproductible. <br>
-                        Ce projet a permis de mettre en place une architecture de Data Lake robuste, évolutive et prête à être utilisée pour l’analyse et la transformation des données dans un environnement Big Data. <br>
+                        Docker a été employé pour déployer et orchestrer l'ensemble de l'infrastructure, garantissant une mise en place rapide et reproductible. <br>
+                        Ce projet a permis de mettre en place une architecture de Data Lake robuste, évolutive et prête à être utilisée pour l'analyse et la transformation des données dans un environnement Big Data. <br>
                     </p>
                     <div class="project-tech-stack">
                         <span class="tech-badge">Hadoop</span>
@@ -990,11 +1073,10 @@
                         <span class="tech-badge">Big Data</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-
+    
     <!-- Contact Dialog Section -->
     <div id="contact-dialog" class="dialog" tabindex="-1" aria-labelledby="contact-heading">
         <!-- Drag handle (close button) -->

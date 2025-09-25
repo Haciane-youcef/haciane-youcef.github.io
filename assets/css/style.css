@@ -3523,7 +3523,7 @@ section{
 }
 @media (max-width:480px) {
     html{
-        font-size: 70% !important;
+        font-size: 60% !important;
     }
 
     .header {
@@ -3615,3 +3615,4 @@ section{
 
     
 }
+

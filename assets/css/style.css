@@ -3554,7 +3554,11 @@ section{
         margin: 0 auto;
 
     }
-
+    
+    #about-me-section .content-wrapper {
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+    }
 
 
     .experience-section-container .content-wrapper {
@@ -3615,4 +3619,5 @@ section{
 
     
 }
+
 

@@ -326,19 +326,36 @@ function createParticles() {
 /**
  * Projects Scroll Update
  */
+// Sélection des éléments
 const projectCards = document.querySelectorAll('.project-card');
-const projectDetails = document.querySelectorAll('.project-detail-content');
+const projectDetails = document.querySelectorAll('.project-details-sidebar .project-detail-content');
+const mobileProjectDetails = document.querySelectorAll('.project-detail-mobile');
 
 let scrollTimeout;
+let isMobile = window.innerWidth <= 768;
+
+// Fonction de debounce pour optimiser les performances
 function debounceUpdate() {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(updateActiveProject, 100);
 }
 
+// Fonction pour détecter si on est en mode mobile
+function checkIfMobile() {
+    return window.innerWidth <= 768;
+}
+
+// Fonction principale pour mettre à jour le projet actif
 function updateActiveProject() {
+    // Ne pas exécuter sur mobile car les détails sont toujours affichés
+    if (checkIfMobile()) {
+        return;
+    }
+
     let activeIndex = 0;
     let maxIntersection = 0;
 
+    // Trouver le projet le plus visible à l'écran
     projectCards.forEach((card, index) => {
         const rect = card.getBoundingClientRect();
         const intersection = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
@@ -348,12 +365,112 @@ function updateActiveProject() {
         }
     });
 
+    // Mettre à jour les classes actives uniquement sur desktop
     projectCards.forEach(card => card.classList.remove('active'));
     projectDetails.forEach(detail => detail.classList.remove('active'));
 
     projectCards[activeIndex].classList.add('active');
-    projectDetails[activeIndex].classList.add('active');
+    if (projectDetails[activeIndex]) {
+        projectDetails[activeIndex].classList.add('active');
+    }
 }
+
+// Fonction pour gérer le changement de taille d'écran
+function handleResize() {
+    const wasMobile = isMobile;
+    isMobile = checkIfMobile();
+
+    // Si on passe de mobile à desktop ou vice versa
+    if (wasMobile !== isMobile) {
+        if (isMobile) {
+            // Passer en mode mobile : nettoyer les classes actives desktop
+            projectCards.forEach(card => card.classList.remove('active'));
+            projectDetails.forEach(detail => detail.classList.remove('active'));
+        } else {
+            // Passer en mode desktop : réactiver le système de scroll
+            updateActiveProject();
+        }
+    }
+}
+
+// Fonction d'initialisation
+function initializeProjects() {
+    // Vérifier si on est sur mobile
+    isMobile = checkIfMobile();
+
+    if (!isMobile) {
+        // Mode desktop : activer le premier projet
+        if (projectCards[0]) {
+            projectCards[0].classList.add('active');
+        }
+        if (projectDetails[0]) {
+            projectDetails[0].classList.add('active');
+        }
+
+        // Ajouter l'écouteur de scroll
+        window.addEventListener('scroll', debounceUpdate);
+    }
+
+    // Ajouter l'écouteur de redimensionnement
+    window.addEventListener('resize', handleResize);
+}
+
+// Animation d'apparition pour les détails mobiles
+function animateMobileDetails() {
+    if (checkIfMobile()) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        mobileProjectDetails.forEach(detail => {
+            // Initialiser l'état d'animation
+            detail.style.opacity = '0';
+            detail.style.transform = 'translateY(20px)';
+            detail.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            
+            observer.observe(detail);
+        });
+    }
+}
+
+// Fonction pour nettoyer les écouteurs d'événements
+function cleanup() {
+    window.removeEventListener('scroll', debounceUpdate);
+    window.removeEventListener('resize', handleResize);
+}
+
+// Initialisation quand le DOM est chargé
+document.addEventListener('DOMContentLoaded', () => {
+    initializeProjects();
+    animateMobileDetails();
+});
+
+// Nettoyage lors du déchargement de la page
+window.addEventListener('beforeunload', cleanup);
+
+// Gestion des clics sur les cartes de projet (optionnel, pour interaction manuelle)
+projectCards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+        if (!checkIfMobile()) {
+            // Comportement desktop : mettre à jour l'état actif
+            projectCards.forEach(c => c.classList.remove('active'));
+            projectDetails.forEach(d => d.classList.remove('active'));
+            
+            card.classList.add('active');
+            if (projectDetails[index]) {
+                projectDetails[index].classList.add('active');
+            }
+        }
+        // Sur mobile, les détails sont déjà visibles, pas besoin d'action
+    });
+});
 
 /**
  * Contact Dialog Handling
@@ -566,7 +683,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Sélectionner les éléments à animer
                 const elements = entry.target.querySelectorAll('h2, h3, p, .social-icons, .btn-group');
                 elements.forEach((el, index) => {
-                    el.style.animationDelay = `${index * 0.4}s`; 
+                    el.style.animationDelay = `${index * 0.5}s`; 
                     el.style.animationPlayState = 'running'; 
                 });
                 homeContentObserver.unobserve(entry.target);
@@ -628,4 +745,3 @@ document.addEventListener('DOMContentLoaded', function () {
     createParticles();
     updateActiveProject();
 });
-

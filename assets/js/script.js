@@ -75,7 +75,7 @@ class ImageCarousel {
         this.currentIndex = 2;
         this.items = document.querySelectorAll('#about-me-section .carousel-item');
         this.caption = document.getElementById('carouselCaption');
-        this.captions = ['I Code', 'I Travel', 'I Lift'];
+        this.captions = ['Voyages', 'Esprit collaboratif', 'Nature'];
         this.isDragging = false;
         this.startX = 0;
         this.currentX = 0;
@@ -745,3 +745,4 @@ document.addEventListener('DOMContentLoaded', function () {
     createParticles();
     updateActiveProject();
 });
+
